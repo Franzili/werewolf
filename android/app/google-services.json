@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "801938524335",
+    "firebase_url": "https://werewolf-45823.firebaseio.com",
+    "project_id": "werewolf-45823",
+    "storage_bucket": "werewolf-45823.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:801938524335:android:f6584eb277e3a5af7cac5a",
+        "android_client_info": {
+          "package_name": "com.franzi.werewolf"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "801938524335-9iv39vne1romq5ejr4rm8di6qp9i3jkl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbGlsf_xM6_5tfbYasdzeJ8u7KSJpEumY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "801938524335-9iv39vne1romq5ejr4rm8di6qp9i3jkl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
