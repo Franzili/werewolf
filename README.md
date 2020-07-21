@@ -1,2 +1,2 @@
-# werewolf_flutter
+# werewolf
 werewolf - The Game -
