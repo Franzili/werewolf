@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'database/database.dart';
+import 'database/userService.dart';
 import 'widgets/roleCard.dart';
 import 'styling/globalTheme.dart';
 
@@ -14,14 +14,14 @@ class Werewolf extends StatefulWidget {
 
 class _WerewolfState extends State<Werewolf> {
   FirebaseUser user;
-  DatabaseService database;
+  UserService database;
 
   Future<void> connectToFirebase() async {
     final FirebaseAuth authenticate = FirebaseAuth.instance;
     AuthResult result = await authenticate.signInAnonymously();
     user = result.user;
 
-    database = DatabaseService(user.uid);
+    database = UserService(user.uid);
 
     if (!(await database.checkIfUserExists())) {
       database.setUserRole("Werewolf");
@@ -72,12 +72,6 @@ class _WerewolfState extends State<Werewolf> {
             );
           }
         },
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          print('pressed Button');
-        },
-        child: Icon(Icons.add),
       ),
     );
   }

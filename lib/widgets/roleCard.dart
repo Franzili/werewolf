@@ -22,3 +22,10 @@ class RoleCard extends StatelessWidget {
     );
   }
 }
+
+enum Role {
+  none,
+  Werwolf,
+  Quacksalber,
+  Seher
+}

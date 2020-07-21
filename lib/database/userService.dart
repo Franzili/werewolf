@@ -1,13 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class DatabaseService {
+class UserService {
 
-  // userID of User is used as document name
+  // userID is used as document name
   final String userID;
-  var userRole;
-  DatabaseService(this.userID);
+  String userRole;
 
-  // user refers to collection User, where all documents (all users) get stored
+  UserService(this.userID);
+
+  // user refers to collection 'user', where all documents (all users) of a
+  // specific lobby get stored
   final CollectionReference user = Firestore.instance.collection('User');
 
   // if document with name userID exists, return true, otherwise create one
@@ -45,4 +47,11 @@ class DatabaseService {
   Stream getMyRole() {
     return user.document(userID).snapshots();
   }
+}
+
+enum Role {
+  none,
+  Werwolf,
+  Quacksalber,
+  Seherin
 }
