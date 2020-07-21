@@ -8,6 +8,7 @@
 *.aar
 *.ap_
 *.aab
+google-services.json
 
 # Files for the ART/Dalvik VM
 *.dex
@@ -171,6 +172,7 @@ doc/api/
 **/ios/Flutter/flutter_export_environment.sh
 **/ios/ServiceDefinitions.json
 **/ios/Runner/GeneratedPluginRegistrant.*
+GoogleService-info.plist
 
 # Exceptions to above rules.
 !**/ios/**/default.mode1v3
