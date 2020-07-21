@@ -17,6 +17,7 @@ class DatabaseService {
     } else {
       await user.document(userID).setData({
         'user does not exist': true,
+        'newUser': true,
       });
       return false;
     }
