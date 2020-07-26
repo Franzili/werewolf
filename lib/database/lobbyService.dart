@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:Werewolf/main/gameState.dart';
 
 class LobbyService {
 
@@ -9,7 +10,7 @@ class LobbyService {
   final CollectionReference lobby = Firestore.instance.collection('lobby');
 
   // if document with name lobbyID exists, return true, otherwise create one
-  Future checkIfUserExists() async {
+  Future checkIfLobbyExists() async {
     if ((await lobby.document(lobbyID).get()).exists) {
       return true;
     } else {
@@ -25,8 +26,17 @@ class LobbyService {
     return lobby.document(lobbyID).snapshots();
   }
 
-  // Add a new user to the current lobby
-  Future setNewLobby(String userID, String role) async {
-    return await lobby.document(lobbyID).collection('user').document();
+  // Add a new user to the lobby with a specific lobbyID
+  Future setNewLobby(String lobbyID, String gameStateID) async {
+    var phase;
+    return lobby.document(lobbyID).collection('gameState').document(gameStateID)
+        .setData({
+      phase: GameState.Day.toString()
+    });
+  }
+
+  // Get the IDs of all players in the current lobby
+  Future getAllPlayers() async {
+    return await lobby.document(lobbyID).collection('user').getDocuments();
   }
 }
