@@ -29,11 +29,9 @@ class _WerewolfState extends State<Werewolf> {
       userService.setUserRole(UserRole.Moderator.toString());
     }
 
-/*
-      Stream userDocumentStream = database.getMyRole();
-      userDocumentStream.listen( (documentSnapshot) =>
-      print(documentSnapshot.data) );
-*/
+    Stream userDocumentStream = userService.getDataStream();
+    userDocumentStream.listen( (documentSnapshot) =>
+        print(documentSnapshot.data) );
   }
 
   @override
