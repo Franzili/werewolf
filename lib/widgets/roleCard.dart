@@ -8,10 +8,14 @@ class RoleCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 22),
+      padding: EdgeInsets.symmetric(
+          horizontal: 22
+      ),
       child: ListTile(
-        contentPadding: EdgeInsets.symmetric(vertical: 8.0),
-        title: Text(
+        contentPadding: EdgeInsets.symmetric(
+            vertical: 8.0
+        ),
+        title: Center(child: Text(
           roleTitle,
           style: TextStyle(
             fontSize: 18.0,
@@ -19,6 +23,7 @@ class RoleCard extends StatelessWidget {
           ),
         ),
         ),
+      )
     );
   }
 }

@@ -5,7 +5,6 @@ import 'database/userService.dart';
 import 'database/lobbyService.dart';
 import 'widgets/roleCard.dart';
 import 'main/role.dart';
-import 'styling/globalTheme.dart';
 
 void main() => runApp(MaterialApp(home: Werewolf()));
 
@@ -30,9 +29,11 @@ class _WerewolfState extends State<Werewolf> {
       userService.setUserRole(UserRole.Moderator.toString());
     }
 
-/*    Stream userDocumentStream = database.getMyRole();
-    userDocumentStream.listen( (documentSnapshot) =>
-        print(documentSnapshot.data) );*/
+/*
+      Stream userDocumentStream = database.getMyRole();
+      userDocumentStream.listen( (documentSnapshot) =>
+      print(documentSnapshot.data) );
+*/
   }
 
   @override
@@ -67,8 +68,8 @@ class _WerewolfState extends State<Werewolf> {
                   return ListView.builder(
                     itemCount: items.length,
                     itemBuilder: (context, i) {
-                      String key = items.keys.elementAt(i);
-                      return RoleCard(items[key]);
+                      String key = items.keys.elementAt(i); // Iterate roles
+                      return Center(child: RoleCard(items[key]));
                   });
                 }
             },
